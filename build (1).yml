@@ -1,4 +1,4 @@
-name: .github/workflows/build.yml
+name: Build APK
 on:
   push:
   workflow_dispatch:
@@ -13,7 +13,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
-      - name: .github/workflows/build.yml
+      - name: Write project files
         run: |
           mkdir -p app
           cat > app/build.gradle.kts <<'ISLAND_EOF'
